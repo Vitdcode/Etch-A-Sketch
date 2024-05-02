@@ -1,0 +1,29 @@
+body {
+    display: flex;
+    background-color: rgb(218, 241, 162);
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 800px;
+    height: 800px;
+    background-color: rgb(30, 32, 34);
+  
+
+}
+
+.container div {
+    display: flex;
+    border:1px solid;
+  
+    border-color: aquamarine;
+    flex: 0 1 calc(6.25% - 1.82px);
+
+
+}
+
+
