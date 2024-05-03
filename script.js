@@ -19,6 +19,7 @@ function initialGrid () {
         const div = document.createElement("div");
         container.appendChild(div);
         div.classList.add("rows");
+        div.style.flex = `0 1 calc(6.25% - 1.82px)`;
     }
 }
 
@@ -37,8 +38,11 @@ newGridButton.addEventListener("click", () => {
 });
 
 
+
+
+
 function newGrid (userInput) {
-    
+    exampleVariable = 100 / userInput; 
     let divs = container.querySelectorAll(".rows"); 
     divs.forEach(div => {container.removeChild(div);})
     
@@ -46,9 +50,9 @@ function newGrid (userInput) {
         const div = document.createElement("div");
         container.appendChild(div);
         div.classList.add("rows");
+        div.style.flex = `0 1 calc(${exampleVariable}% - 1.82px)`;
     }
-
-
+   
 }
 
 

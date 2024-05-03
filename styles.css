@@ -20,9 +20,8 @@ body {
 .container div {
     display: flex;
     border:1px solid;
-  
     border-color: aquamarine;
-    flex: 0 1 calc(6.25% - 1.82px);
+   
 
 
 }
@@ -35,3 +34,4 @@ body {
 }
 
 
+ /* flex: 0 1 calc(6.25% - 1.82px); */
