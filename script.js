@@ -3,6 +3,8 @@
 const container = document.querySelector(".container");
 const buttonContainer = document.querySelector("#buttonContainer");
 const newGridButton = document.createElement("button");
+const blueColorButton = document.querySelector("#blue-color");
+const redColorButton = document.querySelector('#red-color')
 
 buttonContainer.appendChild(newGridButton);
 newGridButton.textContent = "Create New Grid"
@@ -10,6 +12,24 @@ newGridButton.textContent = "Create New Grid"
 
 initialGrid();
 mouseOverDiv();
+blueColorBtn();
+redColorBtn();
+let currentColor = '#d946ef';
+
+function blueColorBtn() {
+    blueColorButton.addEventListener("click", () => {
+
+        currentColor = '#6366f1';
+    })
+}
+
+function redColorBtn() {
+    redColorButton.addEventListener("click", () => {
+
+        currentColor = '#f472b6';
+    })
+}
+
 
 function initialGrid () {
 
@@ -17,7 +37,7 @@ function initialGrid () {
         const div = document.createElement("div");
         container.appendChild(div);
         div.classList.add("rows");
-        div.style.flex = `0 1 calc(6.25% - 1.82px)`;
+        div.style.flex = `0 1 calc(6.25% - 2px)`;
     }
 }
 
@@ -29,11 +49,9 @@ newGridButton.addEventListener("click", () => {
 
     if (userInput > 100) {
         return alert ("100 is the max. Enter a lower Number");
-    }   if (userInput) {
+    }   
             newGrid(userInput);
-            mouseOverDiv();
-    
-        }
+            mouseOverDiv();        
 });
 
 function newGrid (userInput) {
@@ -45,7 +63,7 @@ function newGrid (userInput) {
         const div = document.createElement("div");
         container.appendChild(div);
         div.classList.add("rows");
-        div.style.flex = `0 1 calc(${gridLayout}% - 1.82px)`;
+        div.style.flex = `0 1 calc(${gridLayout}% - 2px)`;
     }  
 }
 
@@ -58,7 +76,7 @@ function mouseOverDiv() {
 
 let opacityValue = 1;
 
-let divs = container.querySelectorAll(".rows"); 
+/* let divs = container.querySelectorAll(".rows"); 
     divs.forEach(div => {
         div.addEventListener("mouseenter", () => {
            
@@ -67,8 +85,22 @@ let divs = container.querySelectorAll(".rows");
                     let blue = Math.floor(Math.random()*255);
                     div.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
                     opacityValue = incrementVariable(opacityValue)
-                    div.style.opacity = opacityValue;
+                    
                     console.log(opacityValue);
+        });
+    });
+}  
+ */
+
+let divs = container.querySelectorAll(".rows"); 
+    divs.forEach(div => {
+        div.addEventListener("mouseenter", () => {
+           
+                    
+                    div.style.backgroundColor = currentColor;
+                 
+                    
+               
         });
     });
 }  

@@ -13,6 +13,7 @@ body {
     width: 960px;
     height: 960px;
     background-color: rgb(30, 32, 34);
+    
   
 
 }
@@ -34,4 +35,40 @@ body {
 }
 
 
- /* flex: 0 1 calc(6.25% - 1.82px); */
+.color-button-container {
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.color-button-container>button {
+    
+    height: 50px;
+    width: 100px;
+    border-radius: 5px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+
+
+}
+
+#blue-color{
+    background-color: #6366f1;
+    border: 1px solid #6366f1;
+    
+}
+
+#blue-color:hover {
+    background-color: #4f46e5;
+}
+
+#red-color:hover {
+    background-color: #db2777;
+}
+
+#red-color {
+    background-color: #f472b6;
+    border: 1px solid #f472b6;
+}
+
